@@ -1,0 +1,324 @@
+@import './partials/default';
+@import './partials/colors';
+@import './partials/buttons';
+
+/* ================ Header ================ */
+header{
+    height: 399px;
+
+    background: linear-gradient(3deg, rgba(255,255,255,1) 22%, rgba(112,112,112,1) 23%);
+}
+
+header .title{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+header .title p:first-child{
+    height: 23px;
+    /* color: #FFFFFF; */
+}
+
+header .title p:nth-child(2n){
+    text-align: center;
+    font: normal normal bold 40px/49px Helvetica Neue;
+    letter-spacing: 0px;
+}
+header .title p:nth-child(3n){
+    margin-top:24px;
+    font: normal normal normal 14px/16px Helvetica Neue;
+}
+
+header .navigation{
+    width: 769px;
+    height: 50px;
+    margin-top: 50px;
+
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navigation button{
+    width: 160px;
+    height: 40px;
+    background: $default;
+    box-shadow: 0px 1px 6px $gray-3;
+    border: 1px solid #707070;
+    color: $gray-2;
+}
+
+/* ================ Main ==================== */
+#main{
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+
+    padding: 30px 430px;
+}
+
+/* ================ Registry ================ */
+#registry{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#registry .description{
+    width: 520px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #888888;
+}
+
+
+#registry .description h3 {
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+#registry .description P{
+    font: normal normal normal 12px/18px Helvetica Neue;
+}
+#registry .description p:nth-child(3n){
+    margin-top: 30px;
+}
+
+#registry .singup,.data{
+    width: 340px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#registry .singup label{
+    color:#888888;
+    font: normal normal normal 12px/14px Helvetica Neue;
+}
+
+#registry .singup .data input{
+    width: 340px;
+    height: 30px;
+
+    border: 1px solid #707070;
+
+    margin-top: 5px;
+    margin-bottom: 10px; 
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+}
+
+#registry .singup .genre{
+    width: 203px;
+    height: 14px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#registry .singup .genre label{
+    position: relative;
+    left: -20px;
+}
+
+#registry .singup button{
+    width: 340px;
+    height: 39px;
+    background: $default;
+    border: 1px solid $gray-1;
+}
+
+/* ================ Divisor ================ */
+
+.divisor{
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 50px;
+    margin-top: 79px;
+
+    display: flex;
+    align-items: center;
+}
+
+.divisor span:nth-child(2n+1){
+    width: 100%;
+
+    background-color: $gray-1;
+    
+    border: 1px solid $gray-1;
+}
+
+.divisor span:nth-child(2){
+    width: 400px;
+    margin: 0px 10px;
+    text-align: center;
+}
+
+.divisor_2{
+    width: 100%;
+
+    margin-top: 138px;
+
+    display: flex;
+    align-items: center;
+}
+
+.divisor_2 span:nth-child(2n+1){
+    width: 100%;
+    height: 0px;
+
+    background-color: #707070;
+    
+    border: 1px solid #707070;
+}
+
+.divisor_2 span:nth-child(2){
+    width: 450px;
+    margin: 0px 10px;
+    text-align: center;
+}
+
+/* ================ Product ================ */
+
+#products{
+    height: auto;
+}
+
+.product-list{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product-list .product:nth-child(n+5){
+    margin-top: 39px;
+}
+
+.product{
+    width: 200px;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #888888;
+}
+
+.product img{
+    width: 100%;
+    height: 150px;
+    border: none;
+}
+
+.product h4{
+    font-size: 14px;
+    letter-spacing: 0px;
+}
+
+.product p{
+    font-size: 12px;
+}
+
+.product p:nth-child(5){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product button{
+    width: $btn-w-3;
+    height: $btn-h-3;
+}
+
+#products .more-btn{
+    width: $btn-w-4;
+    height: $btn-h-4;
+    margin-top: 58px;
+}
+
+/* ================ Newsletter ================ */
+#newsletter{
+    margin-top: 44px;
+}
+
+#newsletter form{
+    margin-top: 39px;
+}
+
+#newsletter .inputNewsletter{
+    width: 720px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#newsletter .inputNewsletter label{
+    font-size: 12px;
+    color: $gray-1;
+    margin-bottom: 7px;
+}
+
+#newsletter .inputNewsletter input{
+    width: 340px;
+    height: 30px;
+}
+
+#newsletter .inputNewsletter .newslwtter-name{
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 50px;
+}
+
+#newsletter .inputNewsletter .newslwtter-name label{
+    font-size: 12px;
+    color:#888888;
+}
+
+#newsletter .inputNewsletter .newsletter-email{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#newsletter form button{
+    width: 260px;
+    height: 39px;
+    margin-top: 50px;
+    background: $default;
+    border: 1px solid $gray-1;
+}
+ 
+/* ================ Footer ================ */
+footer{
+    height: 399px;
+
+    padding-top: 158px;
+
+    background: linear-gradient(178deg, rgba(255,255,255,1) 34%, rgba(112,112,112,1) 35%);
+    color: $default;
+
+    font: 12px Helvetica Neue;
+}
+
+
+
