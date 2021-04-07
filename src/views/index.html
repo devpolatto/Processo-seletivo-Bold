@@ -152,7 +152,7 @@
 
         function handleProduct(products){
             var elementFather = document.getElementById('product-list');
-            
+
             for(let index of products){
                 // var newElement = document.createElement(product)
                 let product = `<div id="product" class="product">
@@ -165,7 +165,7 @@
                         <button>Comprar</button>
                     </div>
                 `
-                elementFather.insertAdjacentHTML("afterbegin", product)
+                elementFather.insertAdjacentHTML("beforeend", product)
             }
         }
 
