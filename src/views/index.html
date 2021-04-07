@@ -79,7 +79,7 @@
         <!-- ================ Products ================ -->
             <div id="products" class="full-flex-column">
                 <div id="product-list" class="product-list">
-                    <div id="product" class="product">
+                    <!-- <div id="product" class="product">
                         <img src="https://avatars.githubusercontent.com/u/51465694?v=4" alt="">
                         <h4 id="name-product">Nome do produto</h4>
                         <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
@@ -87,8 +87,8 @@
                         <p>Por: R$19,99</p>
                         <p>ou 2x de R$9,99</p>
                         <button>Comprar</button>
-                    </div>
-                    <div id="product" class="product">
+                    </div> -->
+                    <!-- <div id="product" class="product">
                         <img src="https://avatars.githubusercontent.com/u/51465694?v=4" alt="">
                         <h4 id="name-product">Nome do produto</h4>
                         <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
@@ -96,7 +96,8 @@
                         <p>Por: R$19,99</p>
                         <p>ou 2x de R$9,99</p>
                         <button>Comprar</button>
-                    </div>
+                    </div> -->
+                </div>
                 <button class="more-btn">Ainda mais produto</button>
             </div>
         <!-- ================ Products ================ -->
@@ -144,35 +145,62 @@
 
         let productList = document.getElementById('product-list')
 
-        async function getProducts(url){
-            try{
-                let products = await axios.get(page_one)
-                return products.data.products;
-            } catch(error){
-                console.log(error)
+        function showResult(data){
+            console.log(data)
+            handleProduct(data)
+        }
+
+        function handleProduct(products){
+            var elementFather = document.getElementById('product-list');
+            console.log(elementFather)
+            // let newProduct = ""
+            // let productName = ""
+            for(let index of products){
+                elementFather.innerHTML = `
+                    <div id="product" class="product">
+                        <img src="https://avatars.githubusercontent.com/u/51465694?v=4" alt="">
+                        <h4 id="name-product">${index.name}</h4>
+                        <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
+                        <p>De: R$23.99</p>
+                        <p>Por: R$19,99</p>
+                        <p>ou 2x de R$9,99</p>
+                        <button>Comprar</button>
+                    </div>
+                `
             }
         }
 
-        (async () => {
-            const productData = await getProducts(page_one);
-            console.log(productData)
-        }) ()
+        function getProducts(url){
+            fetch(page_one, {
+                method: 'get',
+                mode: 'cors'
+            }).then( response => { response.json()
+                .then( data => { showResult(data.products) } )
+            } )
+        }
 
-        // function HandleProducts(products){
-        //     let output = '';
+        getProducts(page_one)
 
-        //     for(let product of products){
-        //         output = `
-        //                 <img src="https://avatars.githubusercontent.com/u/51465694?v=4" alt="">
-        //                 <h4 id="name-product">${product.name}</h4>
-        //                 <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-        //                 <p>De: R$23.99</p>
-        //                 <p>Por: R$19,99</p>
-        //                 <p>ou 2x de R$9,99</p>
-        //         `
+        // async function getProducts(url){
+        //     try{
+        //         let products = await axios.get(page_one)
+        //         console.log(products.data.products)
+        //         return products.data.products;
+        //     } catch(error){
+        //         console.log(error)
         //     }
+        // }
 
-        //     document.querySelector('product').innerHTML = output
+        // (async () => {
+        //     const productData = await getProducts(page_one);
+        //    for(let product of productData){
+        //        console.log(product[product])
+        //    }
+
+        //     // HandleProducts(productData[1].name)
+
+        //     // console.log(productData)
+        // }) ()
 
     </script>
 </body>
