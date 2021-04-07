@@ -158,12 +158,12 @@
             for(let index of products){
                 elementFather.innerHTML = `
                     <div id="product" class="product">
-                        <img src="https://avatars.githubusercontent.com/u/51465694?v=4" alt="">
+                        <img src="${index.image}" alt="">
                         <h4 id="name-product">${index.name}</h4>
-                        <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-                        <p>De: R$23.99</p>
-                        <p>Por: R$19,99</p>
-                        <p>ou 2x de R$9,99</p>
+                        <p>${index.description}</p>
+                        <p>De: R$${index.oldPrice}</p>
+                        <p>Por: R$${index.price}</p>
+                        <p>ou ${index.installments.count}x de R$${index.installments.value}</p>
                         <button>Comprar</button>
                     </div>
                 `
